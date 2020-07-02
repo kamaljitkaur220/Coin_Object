@@ -21,7 +21,9 @@ let coin = {
        
         if (this.state === 0) {
             image.src = "https://www.dhresource.com/0x0s/f2-albu-g4-M01-CB-6B-rBVaEFf172SADIH4AAxRIyzuR3s387.jpg/united-states-of-america-coins-liberty-head.jpg"
+             
         }
+
 
         else {
             image.src = "https://www.englishexercises.org/makeagame/my_documents/my_pictures/2012/apr/A63_nickel-coin-tail.jpg"
@@ -29,7 +31,7 @@ let coin = {
         /* 3. Set the properties of this image element to show either face-up
            or face-down, depending on whether this.state is 0 or 1.*/
 
-        return document.body.append(image);   
+        return image;   
     }
 };
 
@@ -42,19 +44,20 @@ function display20Flips() {
         textBox.append(coin.toString())
         document.body.append(textBox)
         }
-        return console.log("Flips")
+        
     }
+    display20Flips()
     
 
 
 function display20Images() {
     for (let counter = 0; counter <= 20; counter++) {
         coin.flip()
-        coin.toHTML()
+        document.body.append(coin.toHTML())
+       
+        
        
     }
 }
-
-display20Flips()
 
 display20Images()
